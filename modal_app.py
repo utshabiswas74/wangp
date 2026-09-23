@@ -31,11 +31,8 @@ DEFAULT_GPU = os.environ.get("MODAL_GPU", "A100")
 # 2. Persistent Storage (Modal Volumes)
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Cache volume for model weights (Hugging Face, Wan, LTX, Minimax checkpoints)
-model_cache_vol = modal.Volume.from_name("wangp-cache", create_if_missing=True)
-
-# Output volume for generated videos, images, and audio
-output_vol = modal.Volume.from_name("wangp-output", create_if_missing=True)
+# Persistent volume for /kaggle/tmp
+kaggle_tmp_vol = modal.Volume.from_name("wangp-kaggle-tmp", create_if_missing=True)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 3. Custom Container Image
@@ -112,8 +109,7 @@ cuda_image = (
     image=cuda_image,
     gpu=DEFAULT_GPU,
     volumes={
-        "/root/.cache/huggingface": model_cache_vol,
-        "/workspace/output": output_vol,
+        "/kaggle/tmp": kaggle_tmp_vol,
     },
     timeout=3600,
     max_containers=1,
@@ -124,8 +120,7 @@ cuda_image = (
 def ui():
     """Starts the WanGP Gradio server inside the container on port 7860."""
     os.chdir("/workspace")
-    os.makedirs("/workspace/output", exist_ok=True)
-    os.makedirs("/root/.cache/huggingface", exist_ok=True)
+    os.makedirs("/kaggle/tmp", exist_ok=True)
 
     # Clean up any leftover lock file from unexpected previous stops
     if os.path.exists("/workspace/startup.lock"):
