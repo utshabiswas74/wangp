@@ -1,0 +1,16 @@
+{
+    "model": {
+        "name": "Flux 2 Klein Base 9B",
+        "architecture": "flux2_klein_9b",
+        "description": "FLUX.2 Klein 9B is a balanced rectified flow transformer for image generation and editing. This non distilled version is slower but should produce more diverse images. ",
+        "URLs": [
+            "https://huggingface.co/DeepBeepMeep/Flux2/resolve/main/flux-2-klein-base-9b.safetensors",
+            "https://huggingface.co/DeepBeepMeep/Flux2/resolve/main/flux-2-klein-base-9b_quanto_bf16_int8.safetensors"
+        ],
+        "guidance_max_phases": 1
+    },
+    "prompt": "head_swap: start with Picture 1 as the base image, keeping its lighting, environment, and background. remove the head from Picture 1 completely and replace it with the head from Picture 2, strictly preserving the hair, eye color, nose structure of Picture 2. copy the direction of the eye, head rotation, micro expressions from Picture 1, high quality, sharp details, 4k.",
+    "resolution": "1024x1024",
+    "guidance_scale": 4,
+    "num_inference_steps": 30
+}
