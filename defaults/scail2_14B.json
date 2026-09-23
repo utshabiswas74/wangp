@@ -12,7 +12,7 @@
     "prompt": "The character is dancing naturally with expressive body movement",
     "negative_prompt": "",
     "video_length": 150,
-    "resolution": "480x832",
+    "resolution": "544x960",
     "num_inference_steps": 10,
     "force_fps": "15",
     "flow_shift": 3,
