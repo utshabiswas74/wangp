@@ -13,7 +13,7 @@
     "negative_prompt": "",
     "video_length": 150,
     "resolution": "544x960",
-    "num_inference_steps": 10,
+    "num_inference_steps": 5,
     "force_fps": "15",
     "flow_shift": 3,
     "guidance_scale": 5.0,
