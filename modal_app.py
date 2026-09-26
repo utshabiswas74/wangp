@@ -113,7 +113,7 @@ cuda_image = (
     },
     timeout=3600,
     max_containers=1,
-    scaledown_window=300,
+    scaledown_window=180,
 )
 @modal.concurrent(max_inputs=100)
 @modal.web_server(port=7860, startup_timeout=600)

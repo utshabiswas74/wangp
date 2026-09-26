@@ -9,7 +9,7 @@
             "https://huggingface.co/DeepBeepMeep/Wan2.1/resolve/main/scail2_14B_quanto_mfp16_int8.safetensors"
         ]
     },
-    "prompt": "The character is dancing naturally with expressive body movement",
+    "prompt": "The character is dancing naturally with expressive body movement, wearing saree",
     "negative_prompt": "",
     "video_length": 150,
     "resolution": "544x960",
