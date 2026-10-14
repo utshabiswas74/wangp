@@ -11,18 +11,26 @@
     },
     "prompt": "The character is dancing naturally with expressive body movement, wearing saree",
     "negative_prompt": "",
-    "video_length": 150,
+    "video_length": 157,
     "resolution": "544x960",
     "num_inference_steps": 5,
     "force_fps": "15",
     "flow_shift": 3,
-    "guidance_scale": 5.0,
+    "guidance_scale": 1,
+    "guidance_phases": 1,
+    "alt_guidance_scale": 1,
+    "audio_guidance_scale": 1,
+    "lset_name": "Image2Video FusioniX - 5 Steps",
+    "activated_loras": [
+        "https://huggingface.co/DeepBeepMeep/Wan2.1/resolve/main/loras_accelerators/Wan2.1_I2V_14B_FusionX_LoRA.safetensors"
+    ],
+    "loras_multipliers": "1",
     "custom_settings": {
         "scail2_animate_preprocessing": "raw",
         "image_ref_keyword_content": "human character",
         "scail2_inject_ref_frames_in_video": "No"
     },
-    "sliding_window_size": 150,
+    "sliding_window_size": 157,
     "sliding_window_overlap": 5,
     "sliding_window_color_correction_strength": 0
 }
