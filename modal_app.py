@@ -131,7 +131,7 @@ def ui():
 
     # Profile 1 is HighRAM_HighVRAM (ideal for A100 with 24GB+ VRAM)
     # Pass custom args using WANGP_ARGS or WAN2GP_ARGS environment variable if desired
-    extra_args = os.environ.get("WANGP_ARGS", os.environ.get("WAN2GP_ARGS", "--profile 1 --advanced"))
+    extra_args = os.environ.get("WANGP_ARGS", os.environ.get("WAN2GP_ARGS", "--profile 1"))
     cmd = f"python3 -u wgp.py --listen --server-port 7860 {extra_args}"
     print(f"[WanGP Modal] Launching server: {cmd}")
     subprocess.Popen(cmd, shell=True, cwd="/workspace")
