@@ -30,7 +30,7 @@
         "image_ref_keyword_content": "human character",
         "scail2_inject_ref_frames_in_video": "No"
     },
-    "sliding_window_size": 157,
+    "sliding_window_size": 81,
     "sliding_window_overlap": 5,
     "sliding_window_color_correction_strength": 0
 }
